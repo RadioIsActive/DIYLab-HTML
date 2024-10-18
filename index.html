@@ -55,8 +55,8 @@
     <!-- A second button that performs a different task -->
     <button class="yellow-button" onclick="changeBackgroundColor()">Change Background Color</button>
 
-    <!-- A third button that will show a different message on the page -->
-    <button class="blue-button" onclick="displayMessage('The blue button was clicked! Here’s a tip: Always measure twice before cutting—it's the secret to perfect projects!')">Blue Button</button>
+    <!-- A third button that changes the text color of the message area -->
+    <button class="blue-button" onclick="changeTextColor()">Blue Button</button>
 
     <p id="message-area"></p>
 
@@ -91,6 +91,14 @@
             }
             
             console.log("Background color changed to: " + document.body.style.backgroundColor);
+        }
+
+        // This function changes the text color of the message area
+        function changeTextColor() {
+            const messageArea = document.getElementById("message-area");
+            messageArea.style.color = messageArea.style.color === 'red' ? 'black' : 'red'; // Toggle between red and black
+            displayMessage("The text color has been changed!"); // Display a message for the blue button
+            console.log("Text color changed to: " + messageArea.style.color);
         }
     </script>
 </body>
