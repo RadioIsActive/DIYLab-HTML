@@ -78,13 +78,18 @@
 
       // This function changes the background color of the page
       function changeBackgroundColor() {
+        const currentColor = document.body.style.backgroundColor;
+
         // Toggle between the selected color and white
-        document.body.style.backgroundColor = 
-          document.body.style.backgroundColor === 'rgb(134, 187, 216)' ? 'white' : '#86BBD8';
+        if (currentColor === 'rgb(134, 187, 216)' || currentColor === '') {
+          document.body.style.backgroundColor = 'white';
+        } else {
+          document.body.style.backgroundColor = '#86BBD8';
+        }
+        
         displayMessage("Background color changed to " + document.body.style.backgroundColor); // Update message area
         console.log("Background color changed to: " + document.body.style.backgroundColor);
       }
     </script>
   </body>
 </html>
-
