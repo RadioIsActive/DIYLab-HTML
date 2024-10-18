@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIY Lab - JavaScript Integration</title>
     <style>
-      /* Styling for the buttons */
-      .red-button {
-        background-color: #F26419;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-      }
+        /* Styling for the buttons */
+        .red-button {
+            background-color: #F26419;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-      .yellow-button {
-        background-color: #F6AE2D;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-      }
+        .yellow-button {
+            background-color: #F6AE2D;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-      .blue-button {
-        background-color: #33658A;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        font-size: 16px;
-        cursor: pointer;
-      }
+        .blue-button {
+            background-color: #33658A;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
 
-      p {
-        font-size: 18px;
-      }
+        p {
+            font-size: 18px;
+        }
 
-      #message-area {
-        margin-top: 20px;
-        font-weight: bold;
-      }
+        #message-area {
+            margin-top: 20px;
+            font-weight: bold;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Button that triggers the custom JavaScript function -->
     <button class="red-button" onclick="displayMessage('You pressed the red button! Time to get started on your next exciting project!')">Red Button</button>
 
@@ -61,36 +61,36 @@
     <p id="message-area"></p>
 
     <script>
-      // This function runs automatically when the page loads
-      window.onload = function() {
-        console.log("The page has loaded successfully!");
-        const welcomeMessage = document.createElement("p");
-        welcomeMessage.textContent = "Welcome to the DIY Lab site! Select a button to begin.";
-        document.body.insertBefore(welcomeMessage, document.getElementById("message-area"));
-      };
+        // This function runs automatically when the page loads
+        window.onload = function() {
+            console.log("The page has loaded successfully!");
+            const welcomeMessage = document.createElement("p");
+            welcomeMessage.textContent = "Welcome to the DIY Lab site! Select a button to begin.";
+            document.body.insertBefore(welcomeMessage, document.getElementById("message-area"));
+        };
 
-      // This function displays a message in the message area
-      function displayMessage(message) {
-        const messageArea = document.getElementById("message-area");
-        messageArea.textContent = message; // Display the message in the paragraph
-        console.log("Message displayed: " + message); // Log the message to the console
-      }
-
-      // This function changes the background color of the page
-      function changeBackgroundColor() {
-        const currentColor = document.body.style.backgroundColor;
-
-        // Toggle between the selected color and white
-        if (currentColor === 'rgb(134, 187, 216)' || currentColor === '') {
-          document.body.style.backgroundColor = '#86BBD8'; // Change to blue
-          displayMessage("Brightening the space! Let's get those creative juices flowing!"); // Message for blue
-        } else {
-          document.body.style.backgroundColor = 'white'; // Change back to white
-          displayMessage("Back to a clean slate! Perfect for new ideas and inspiration!"); // Message for white
+        // This function displays a message in the message area
+        function displayMessage(message) {
+            const messageArea = document.getElementById("message-area");
+            messageArea.textContent = message; // Display the message in the paragraph
+            console.log("Message displayed: " + message); // Log the message to the console
         }
-        
-        console.log("Background color changed to: " + document.body.style.backgroundColor);
-      }
+
+        // This function changes the background color of the page
+        function changeBackgroundColor() {
+            const currentColor = document.body.style.backgroundColor;
+
+            // Toggle between the selected color and white
+            if (currentColor === 'rgb(134, 187, 216)' || currentColor === '') {
+                document.body.style.backgroundColor = '#86BBD8'; // Change to blue
+                displayMessage("Brightening the space! Let's get those creative juices flowing!"); // Message for blue
+            } else {
+                document.body.style.backgroundColor = 'white'; // Change back to white
+                displayMessage("Back to a clean slate! Perfect for new ideas and inspiration!"); // Message for white
+            }
+            
+            console.log("Background color changed to: " + document.body.style.backgroundColor);
+        }
     </script>
-  </body>
+</body>
 </html>
