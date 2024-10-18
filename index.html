@@ -95,11 +95,16 @@
 
         // This function changes the text color of the message area
         function changeTextColor() {
-            const messageArea = document.getElementById("message-area");
-            messageArea.style.color = messageArea.style.color === '#F26419' ? 'black' : '#F26419'; // Toggle between red and black
-            displayMessage("The text color has been changed!"); // Display a message for the blue button
-            console.log("Text color changed to: " + messageArea.style.color);
-        }
+    const messageArea = document.getElementById("message-area");
+    const currentColor = getComputedStyle(messageArea).color; // Get the current text color
+    if (currentColor === 'rgb(242, 100, 25)') { // Checking the RGB value of red
+        messageArea.style.color = 'black';
+    } else {
+        messageArea.style.color = '#F26419'; // Change to red
+    }
+    displayMessage("The text color has been changed!"); // Display a message for the blue button
+    console.log("Text color changed to: " + messageArea.style.color);
+}
     </script>
 </body>
 </html>
