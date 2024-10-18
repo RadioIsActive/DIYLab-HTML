@@ -78,10 +78,11 @@
 
         // This function changes the background color of the page
         function changeBackgroundColor() {
-            const currentColor = document.body.style.backgroundColor;
+            // Get the computed background color to handle the color changes correctly
+            const currentColor = getComputedStyle(document.body).backgroundColor;
 
             // Toggle between the selected color and white
-            if (currentColor === '' || currentColor === 'rgb(255, 255, 255)') {
+            if (currentColor === 'rgb(255, 255, 255)' || currentColor === 'rgba(255, 255, 255, 1)') {
                 document.body.style.backgroundColor = '#86BBD8'; // Change to blue
                 displayMessage("Brightening the space! Let's get those creative juices flowing!"); // Message for blue
             } else {
