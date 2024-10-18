@@ -7,7 +7,7 @@
     <style>
       /* Styling for the buttons */
       .red-button {
-        background-color: red;
+        background-color: #F26419;
         color: white;
         border: none;
         padding: 10px 20px;
@@ -16,16 +16,16 @@
       }
 
       .yellow-button {
-        background-color: yellow;
-        color: black;
+        background-color: #F6AE2D;
+        color: white;
         border: none;
         padding: 10px 20px;
         font-size: 16px;
         cursor: pointer;
       }
 
-      .green-button {
-        background-color: green;
+      .blue-button {
+        background-color: #33658A;
         color: white;
         padding: 10px 20px;
         border: none;
@@ -56,7 +56,7 @@
     <button class="yellow-button" onclick="changeBackgroundColor()">Change Background Color</button>
 
     <!-- A third button that will show a different message on the page -->
-    <button class="green-button" onclick="displayMessage('The green button was clicked! Keep going!')">Green Button</button>
+    <button class="blue-button" onclick="displayMessage('The blue button was clicked! Keep going!')">Blue Button</button>
 
     <p id="message-area"></p>
 
@@ -78,7 +78,7 @@
 
       // This function changes the background color of the page
       function changeBackgroundColor() {
-        document.body.style.backgroundColor = document.body.style.backgroundColor === 'lightblue' ? 'white' : 'lightblue';
+        document.body.style.backgroundColor = document.body.style.backgroundColor === '#86BBD8' ? 'white' : '#86BBD8';
         displayMessage("Background color changed to " + document.body.style.backgroundColor); // Update message area
         console.log("Background color changed to: " + document.body.style.backgroundColor);
       }
