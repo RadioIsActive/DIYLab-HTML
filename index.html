@@ -35,22 +35,28 @@
 
       body {
         font-family: Arial, sans-serif;
+        margin: 20px;
       }
 
       p {
         font-size: 18px;
       }
+
+      #message-area {
+        margin-top: 20px;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
     <!-- Button that triggers the custom JavaScript function -->
-    <button title="Good job!" class="red-button" onclick="alertMessage()">Click Me!</button>
+    <button class="red-button" onclick="displayMessage('You pressed the red button! This is a great start!')">Red Button</button>
 
     <!-- A second button that performs a different task -->
     <button class="yellow-button" onclick="changeBackgroundColor()">Change Background Color</button>
 
-    <!-- A third button that will show a message on the page -->
-    <button class="green-button" onclick="displayMessage()">Display Message</button>
+    <!-- A third button that will show a different message on the page -->
+    <button class="green-button" onclick="displayMessage('The green button was clicked! Keep going!')">Green Button</button>
 
     <p id="message-area"></p>
 
@@ -58,27 +64,24 @@
       // This function runs automatically when the page loads
       window.onload = function() {
         console.log("The page has loaded successfully!");
-        alert("Welcome to the DIY Lab site! JavaScript is ready to go.");
+        const welcomeMessage = document.createElement("p");
+        welcomeMessage.textContent = "Welcome to the DIY Lab site! JavaScript is ready to go.";
+        document.body.insertBefore(welcomeMessage, document.getElementById("message-area"));
       };
 
-      // This function is triggered by the first button
-      function alertMessage() {
-        alert("You clicked the red button! Good job!");
-      }
-
-      // This function is triggered by the second button and changes the background color of the page
-      function changeBackgroundColor() {
-        document.body.style.backgroundColor = "lightblue";
-        console.log("Background color changed to light blue");
-      }
-
-      // This function is triggered by the third button and displays a message on the page
-      function displayMessage() {
+      // This function displays a message in the message area
+      function displayMessage(message) {
         const messageArea = document.getElementById("message-area");
-        messageArea.innerHTML = "You clicked the green button! Here's your message.";
-        console.log("Message displayed in the paragraph area.");
+        messageArea.textContent = message; // Display the message in the paragraph
+        console.log("Message displayed: " + message); // Log the message to the console
       }
 
+      // This function changes the background color of the page
+      function changeBackgroundColor() {
+        document.body.style.backgroundColor = document.body.style.backgroundColor === 'lightblue' ? 'white' : 'lightblue';
+        displayMessage("Background color changed to " + document.body.style.backgroundColor); // Update message area
+        console.log("Background color changed to: " + document.body.style.backgroundColor);
+      }
     </script>
   </body>
 </html>
