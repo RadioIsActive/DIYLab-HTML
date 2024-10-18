@@ -1,49 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>HTML CSS Review</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY Lab - JavaScript Integration</title>
     <style>
-      /*
-        This is a comment.
-      */
+      /* Styling for the buttons */
       .red-button {
         background-color: red;
         color: white;
         border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
       }
 
       .yellow-button {
         background-color: yellow;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .green-button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      p {
+        font-size: 18px;
       }
     </style>
   </head>
   <body>
-    <!--
-      This is a comment.
-    -->
-    <button title="Good job!" class="red-button" onclick="
-      alert('Good job!');
-    ">
-      hello
-    </button>
+    <!-- Button that triggers the custom JavaScript function -->
+    <button title="Good job!" class="red-button" onclick="alertMessage()">Click Me!</button>
 
-    <p>
-      paragraph of <button class="yellow-button">hello</button> text
-    </p>
+    <!-- A second button that performs a different task -->
+    <button class="yellow-button" onclick="changeBackgroundColor()">Change Background Color</button>
+
+    <!-- A third button that will show a message on the page -->
+    <button class="green-button" onclick="displayMessage()">Display Message</button>
+
+    <p id="message-area"></p>
 
     <script>
-      // This is a comment.
-      // This code creates a popup.
-      // alert('hello');
+      // This function runs automatically when the page loads
+      window.onload = function() {
+        console.log("The page has loaded successfully!");
+        alert("Welcome to the DIY Lab site! JavaScript is ready to go.");
+      };
 
-      /*
-        multi
-        line
-        comment
-      */
+      // This function is triggered by the first button
+      function alertMessage() {
+        alert("You clicked the red button! Good job!");
+      }
 
-      console.log(2 + 2);
-      console.log('some' + 'text');
+      // This function is triggered by the second button and changes the background color of the page
+      function changeBackgroundColor() {
+        document.body.style.backgroundColor = "lightblue";
+        console.log("Background color changed to light blue");
+      }
+
+      // This function is triggered by the third button and displays a message on the page
+      function displayMessage() {
+        const messageArea = document.getElementById("message-area");
+        messageArea.innerHTML = "You clicked the green button! Here's your message.";
+        console.log("Message displayed in the paragraph area.");
+      }
+
     </script>
   </body>
 </html>
