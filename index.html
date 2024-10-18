@@ -50,13 +50,13 @@
 </head>
 <body>
     <!-- Button that triggers the custom JavaScript function -->
-    <button class="red-button" onclick="displayMessage('You pressed the red button! Time to get started on your next exciting project!')">Red Button</button>
+    <button class="red-button" onclick="redButtonAction()">Red Button</button>
 
     <!-- A second button that performs a different task -->
     <button class="yellow-button" onclick="changeBackgroundColor()">Change Background Color</button>
 
     <!-- A third button that will show a different message on the page -->
-    <button class="blue-button" onclick="displayMessage('The blue button was clicked! Here’s a tip: Always measure twice before cutting—it's the secret to perfect projects!')">Blue Button</button>
+    <button class="blue-button" onclick="blueButtonAction()">Blue Button</button>
 
     <p id="message-area"></p>
 
@@ -68,6 +68,18 @@
             welcomeMessage.textContent = "Welcome to the DIY Lab site! Select a button to begin.";
             document.body.insertBefore(welcomeMessage, document.getElementById("message-area"));
         };
+
+        // This function handles the red button click
+        function redButtonAction() {
+            const message = 'You pressed the red button! Time to get started on your next exciting project!';
+            displayMessage(message); // Display the message for the red button
+        }
+
+        // This function handles the blue button click
+        function blueButtonAction() {
+            const message = 'The blue button was clicked! Here’s a tip: Always measure twice before cutting—it's the secret to perfect projects!';
+            displayMessage(message); // Display the message for the blue button
+        }
 
         // This function displays a message in the message area
         function displayMessage(message) {
