@@ -65,7 +65,7 @@
       window.onload = function() {
         console.log("The page has loaded successfully!");
         const welcomeMessage = document.createElement("p");
-        welcomeMessage.textContent = "Welcome to the DIY Lab site! JavaScript is ready to go.";
+        welcomeMessage.textContent = "Welcome to the DIY Lab site! Select a button to begin.";
         document.body.insertBefore(welcomeMessage, document.getElementById("message-area"));
       };
 
@@ -78,7 +78,20 @@
 
       // This function changes the background color of the page
       function changeBackgroundColor() {
-        document.body.style.backgroundColor = document.body.style.backgroundColor === '#86BBD8' ? 'white' : '#86BBD8';
+        const currentColor = document.body.style.backgroundColor;
+
+        // Toggle between the selected color and white
+        if (currentColor === 'rgb(134, 187, 216)' || currentColor === '') {
+          document.body.style.backgroundColor = '#86BBD8'; // Change to blue
+          displayMessage("Brightening the space! Let's get those creative juices flowing!"); // Message for blue
+        } else {
+          document.body.style.backgroundColor = 'white'; // Change back to white
+          displayMessage("Back to a clean slate! Perfect for new ideas and inspiration!"); // Message for white
+        }
+        
+        console.log("Background color changed to: " + document.body.style.backgroundColor);
+      }
+        
         displayMessage("Background color changed to " + document.body.style.backgroundColor); // Update message area
         console.log("Background color changed to: " + document.body.style.backgroundColor);
       }
