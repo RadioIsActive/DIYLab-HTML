@@ -124,6 +124,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .reset-button {
+            background-color: #F26419;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
         .AddCart {
             background: linear-gradient(to right, #ffafd1, #a5d4ff);
             color: white;
@@ -154,6 +162,7 @@
     </style>
 </head>
 <body>
+    <button class="reset-button" onclick="resetCart()">Reset Button</button>
 
     <button class="AddCart" onclick="addToCart()"> 
         Add to cart
@@ -172,9 +181,9 @@
         }
 
         // Function to display a message
-        function displayMessage(message) {
-            const messageArea = document.getElementById('cartMessage');
-            messageArea.textContent = message;
+        function resetCart() {
+            Quantity = 0;
+            displayMessage(`Cart quantity: ${Quantity}`);
         }
     </script>
 
