@@ -124,14 +124,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
         .reset-button {
-            background-color: #F26419;
+            background: linear-gradient(to right, #F6AE2D, #F26419);
             color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
             cursor: pointer;
+            font-size: 20px;
+            font-family: 'Papyrus', fantasy;
+            padding: 15px 30px;
+            border: 1px solid; /* Specify border width, style, and color */
+            border-radius: 30px;
+            margin-top: 3px;
+            margin-bottom: 3px;
+            margin-left: 5px;
+            margin-right: 5px;
         }
+
+        .reset-button:hover {
+            background: linear-gradient(to right, #33658A, #86BBD8); 
+            transform: translateY(-3px);
+            opacity: 0.75;
+            box-shadow: 10px 10px 19px grey;
+        }
+
+        .reset-button:active {
+            background-color: #2F4858;
+            color: #0069c8;
+            box-shadow: 10px 10px 19px grey;
+        }
+        
         .AddCart {
             background: linear-gradient(to right, #ffafd1, #a5d4ff);
             color: white;
