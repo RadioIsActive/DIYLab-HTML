@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .AddCart{
+        background: linear-gradient(to right, #ffafd1, #a5d4ff);
+        color: white;
+        cursor:pointer;
+        font-size:20px;
+        font-family: 'Papyrus', fantasy;
+        padding:15px 30px;
+        border-top:1px;
+        border-bottom:1px;
+        border-left:1px;
+        border-right:1px;
+        border-radius: 30px;
+        margin-top:3px;
+        margin-bottom:3px;
+        margin-left:5px;
+        margin-right:5px;
+        }
+        .AddCart:hover{
+            background: linear-gradient(to right, #ffafd1, #a5d4ff);
+            background: linear-gradient(to right, #83c4ff, #c8e5ff); 
+            transform: translateY(-3px);
+            opacity: 0.75;
+            box-shadow:10px 10px 19px grey;
+        }
+        .AddCart:active{
+            background: linear-gradient(to right, #fbff75, #fcff9d);
+            color: #0069c8;
+            box-shadow:10px 10px 19px grey;
+        }
+
+    </style>
+    <button class = "AddCart" onclick="
+       Quantity = Quantity + 1;
+    "> 
+        Add to cart
+    </button>
+    <script src ="index.js">
+        let Quantity = 0;
+    </script>
+</body>
+</html>
+ 
